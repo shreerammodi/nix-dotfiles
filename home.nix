@@ -103,6 +103,8 @@
     syntaxHighlighting.enable = true;
     dotDir = ".config/zsh";
 
+    autocd = true;
+
     initExtraBeforeCompInit = ''
       # disable sort when completing `git checkout`
       zstyle ':completion:*:git-checkout:*' sort false
