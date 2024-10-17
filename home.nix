@@ -24,10 +24,25 @@
     pkgs.kitty
     pkgs.nnn
     pkgs.lua5_1
+
+    pkgs.isync
+    pkgs.msmtp
     pkgs.neomutt
+    pkgs.notmuch
+    pkgs.urlscan
+    pkgs.w3m
+
     pkgs.luarocks
     pkgs.ripgrep
     pkgs.khard
+    pkgs.eza
+    pkgs.ripgrep
+
+    pkgs.yazi
+
+    pkgs.buku
+
+    pkgs.texliveFull
 
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
