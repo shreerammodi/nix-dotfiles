@@ -90,9 +90,7 @@
   #
   # if you don't want to manage your shell through Home Manager.
 
-  home.sessionPath = [
-    "$HOME/.local/bin"
-  ];
+  home.sessionPath = [ "$HOME/.local/bin" ];
 
   home.sessionVariables = {
     EDITOR = "nvim";
@@ -211,21 +209,21 @@
     '';
 
     plugins = [
-    {
+      {
         name = "zsh-powerlevel10k";
         src = "${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/";
         file = "powerlevel10k.zsh-theme";
-    }
-    {
+      }
+      {
         name = "fzf-tab";
         src = pkgs.fetchFromGitHub {
-            owner = "Aloxaf";
-            repo = "fzf-tab";
-            rev = "v1.1.2";
-            sha256 = "061jjpgghn8d5q2m2cd2qdjwbz38qrcarldj16xvxbid4c137zs2";
+          owner = "Aloxaf";
+          repo = "fzf-tab";
+          rev = "v1.1.2";
+          sha256 = "061jjpgghn8d5q2m2cd2qdjwbz38qrcarldj16xvxbid4c137zs2";
         };
         file = "fzf-tab.plugin.zsh";
-    }
+      }
     ];
   };
 
@@ -235,29 +233,27 @@
     enableBashIntegration = true;
   };
 
-    programs.git = {
-        delta = {
-            enable = true;
-            options = {
-                navigate = true;
-                line-numbers = true;
-                side-by-side = false;
-            };
-        };
-        enable = true;
-        ignores = [
-            ".DS_Store"
-        ];
-        userName = "Shreeram Modi";
-        userEmail = "smodi@smodi.net";
-        signing.key = "0x994DB28C8F367B2F";
+  programs.git = {
+    delta = {
+      enable = true;
+      options = {
+        navigate = true;
+        line-numbers = true;
+        side-by-side = false;
+      };
     };
+    enable = true;
+    ignores = [ ".DS_Store" ];
+    userName = "Shreeram Modi";
+    userEmail = "smodi@smodi.net";
+    signing.key = "0x994DB28C8F367B2F";
+  };
 
   programs.gpg = {
     enable = true;
     settings = {
-        default-key = "D104506D47E7579BF01E3205994DB28C8F367B2F";
-        default-new-key-algo = "ed25519/cert";
+      default-key = "D104506D47E7579BF01E3205994DB28C8F367B2F";
+      default-new-key-algo = "ed25519/cert";
     };
   };
 
@@ -270,7 +266,7 @@
 
   programs.zoxide = {
     enable = true;
-    enableBashIntegration= true;
+    enableBashIntegration = true;
     enableZshIntegration = true;
   };
 
