@@ -44,6 +44,8 @@
 
     pkgs.texliveFull
 
+    pkgs.nixfmt-rfc-style
+
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
