@@ -114,7 +114,6 @@
 
   programs.zsh = {
     enable = true;
-    package = pkgs.zsh;
     enableCompletion = true;
     syntaxHighlighting.enable = true;
     dotDir = ".config/zsh";
@@ -221,7 +220,6 @@
 
   programs.gpg = {
     enable = true;
-    # package = pkgs.gnupg23;
     settings = {
         default-key = "D104506D47E7579BF01E3205994DB28C8F367B2F";
         default-new-key-algo = "ed25519/cert";
@@ -230,7 +228,6 @@
 
   programs.password-store = {
     enable = true;
-    package = pkgs.pass;
     settings = {
       PASSWORD_STORE_ENABLE_EXTENSIONS = "true";
     };
