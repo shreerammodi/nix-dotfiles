@@ -238,7 +238,7 @@
 
   programs.zoxide = {
     enable = true;
-    package = pkgs.zoxide;
+    enableBashIntegration= true;
     enableZshIntegration = true;
   };
 
