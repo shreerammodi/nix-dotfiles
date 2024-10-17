@@ -218,6 +218,12 @@
     ];
   };
 
+  programs.fzf = {
+    enable = true;
+    enableZshIntegration = true;
+    enableBashIntegration = true;
+  };
+
   programs.gpg = {
     enable = true;
     settings = {
