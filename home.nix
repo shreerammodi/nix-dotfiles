@@ -120,21 +120,10 @@
 
     autocd = true;
 
-    initExtraBeforeCompInit = ''
-      # disable sort when completing `git checkout`
-      zstyle ':completion:*:git-checkout:*' sort false
-      # set descriptions format to enable group support
-      zstyle ':completion:*:descriptions' format '[%d]'
-      # set list-colors to enable filename colorizing
-      zstyle ':completion:*' list-colors ''${(s.:.)LS_COLORS}
-      # preview directory's content with eza when completing cd
-      zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
-      # switch group using `,` and `.`
-      zstyle ':fzf-tab:*' switch-group ',' '.'
-      # preview nvim
-      zstyle ':fzf-tab:complete:nvim:*' fzf-preview 'cat $realpath'
-      # switch group using `<` and `>`
-      zstyle ':fzf-tab:*' switch-group '<' '>'
+    profileExtra = ''
+      eval "$(/opt/homebrew/bin/brew shellenv)"
+
+      FPATH="$(brew --prefix)/share/zsh/site-functions:''${FPATH}"
     '';
 
     initExtraFirst = ''
@@ -147,6 +136,26 @@
 
       # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
       [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+    '';
+
+    completionInit = ''
+      autoload -Uz compinit && compinit -C
+
+      zstyle ':completion:*' rehash true
+      # disable sort when completing `git checkout`
+      zstyle ':completion:*:git-checkout:*' sort false
+      # set descriptions format to enable group support
+      zstyle ':completion:*:descriptions' format '[%d]'
+      # set list-colors to enable filename colorizing
+      zstyle ':completion:*' list-colors ''${(s.:.)LS_COLORS}
+      # preview directory's content with eza when completing cd
+      zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -a1 --color=always $realpath'
+      # switch group using `,` and `.`
+      zstyle ':fzf-tab:*' switch-group ',' '.'
+      # preview nvim
+      zstyle ':fzf-tab:complete:nvim:*' fzf-preview 'cat $realpath'
+      # switch group using `<` and `>`
+      zstyle ':fzf-tab:*' switch-group '<' '>'
     '';
 
     initExtra = ''
@@ -223,6 +232,24 @@
     enableZshIntegration = true;
     enableBashIntegration = true;
   };
+
+    programs.git = {
+        delta = {
+            enable = true;
+            options = {
+                navigate = true;
+                line-numbers = true;
+                side-by-side = false;
+            };
+        };
+        enable = true;
+        ignores = [
+            ".DS_Store"
+        ];
+        userName = "Shreeram Modi";
+        userEmail = "smodi@smodi.net";
+        signing.key = "0x994DB28C8F367B2F";
+    };
 
   programs.gpg = {
     enable = true;
