@@ -101,6 +101,7 @@
   };
 
   home.shellAliases = {
+    b = "buku --suggest";
     e = "eza";
     ea = "eza --all";
     el = "eza --long --header --git --icons --classify --all";
