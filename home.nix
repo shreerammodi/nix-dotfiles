@@ -36,6 +36,7 @@
     pkgs.ripgrep
     pkgs.khard
     pkgs.eza
+    pkgs.tree
     pkgs.ripgrep
 
     pkgs.yazi
