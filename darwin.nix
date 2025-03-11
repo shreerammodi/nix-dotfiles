@@ -7,8 +7,6 @@
   # $ nix-env -qaP | grep wget
   environment.systemPackages = [ ];
 
-  # Auto upgrade nix package and the daemon service.
-  services.nix-daemon.enable = true;
   # services.karabiner-elements.enable = true;
   # nix.package = pkgs.nix;
 
@@ -21,10 +19,10 @@
 
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
-  system.stateVersion = 4;
+  system.stateVersion = 5;
 
   # Enable Touch ID for sudo
-  security.pam.enableSudoTouchIdAuth = true;
+  security.pam.services.sudo_local.touchIdAuth = true;
 
   # The platform the configuration will be used on.
   nixpkgs = {
