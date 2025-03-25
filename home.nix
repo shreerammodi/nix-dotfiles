@@ -248,6 +248,11 @@
     userName = "Shreeram Modi";
     userEmail = "smodi@smodi.net";
     signing.key = "0x994DB28C8F367B2F";
+    extraConfig = {
+      credential = {
+        helper = "store";
+      };
+    };
   };
 
   programs.gpg = {
