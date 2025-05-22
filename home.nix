@@ -19,6 +19,7 @@
   # environment.
   home.packages = [
     pkgs.neovim
+    pkgs.emacs
     pkgs.stow
     pkgs.pass
     pkgs.kitty

@@ -39,8 +39,9 @@
     ];
 
     casks = [
-      "contexts"
-      "raycast"
+      "alfred"
+      "alt-tab"
+      "hammerspoon"
     ];
   };
 
