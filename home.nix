@@ -100,6 +100,7 @@
     PAGER = "less -r";
     MANPAGER = "nvim +Man!";
     KEYID = "0x994DB28C8F367B2F";
+    ZK_NOTEBOOK_DIR = "/Users/shreeram/Documents/notes";
   };
 
   home.shellAliases = {
