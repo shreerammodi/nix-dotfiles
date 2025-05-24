@@ -36,12 +36,12 @@
     enable = true;
 
     brews = [
+      "hammerspoon"
     ];
 
     casks = [
       "alfred"
       "alt-tab"
-      "hammerspoon"
     ];
   };
 
