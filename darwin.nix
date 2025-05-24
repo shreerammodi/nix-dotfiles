@@ -49,6 +49,10 @@
     ];
   };
 
+  fonts.packages = [
+        pkgs.ibm-plex
+    ];
+
   users.users.shreeram = {
     name = "shreeram";
     home = "/Users/shreeram";
