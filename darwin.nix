@@ -42,6 +42,8 @@
     casks = [
       "alfred"
       "alt-tab"
+      "emacs"
+      "kitty"
     ];
   };
 

@@ -19,10 +19,8 @@
   # environment.
   home.packages = [
     pkgs.neovim
-    pkgs.emacs
     pkgs.stow
     pkgs.pass
-    pkgs.kitty
     pkgs.nnn
     pkgs.lua5_1
 
