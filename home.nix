@@ -18,6 +18,10 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
+    pkgs.cargo
+    pkgs.nodejs
+    pkgs.python3
+
     pkgs.neovim
     pkgs.stow
     pkgs.pass
