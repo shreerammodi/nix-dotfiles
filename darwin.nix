@@ -51,8 +51,8 @@
   };
 
   fonts.packages = [
-        pkgs.ibm-plex
-    ];
+    pkgs.ibm-plex
+  ];
 
   users.users.shreeram = {
     name = "shreeram";
