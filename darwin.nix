@@ -39,6 +39,7 @@
 
     brews = [
       "hammerspoon"
+      "iina"
     ];
 
     casks = [
