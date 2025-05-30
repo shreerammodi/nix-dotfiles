@@ -17,40 +17,40 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = [
-    pkgs.cargo
-    pkgs.nodejs
-    pkgs.python3
+  home.packages = with pkgs; [
+    cargo
+    nodejs
+    python3
 
-    pkgs.neovim
-    pkgs.stow
-    pkgs.pass
-    pkgs.nnn
-    pkgs.lua5_1
+    neovim
+    stow
+    pass
+    nnn
+    lua5_1
 
-    pkgs.isync
-    pkgs.msmtp
-    pkgs.neomutt
-    pkgs.notmuch
-    pkgs.urlscan
-    pkgs.w3m
+    isync
+    msmtp
+    neomutt
+    notmuch
+    urlscan
+    w3m
 
-    pkgs.luarocks
-    pkgs.ripgrep
-    pkgs.khard
-    pkgs.eza
-    pkgs.tree
-    pkgs.ripgrep
+    luarocks
+    ripgrep
+    khard
+    eza
+    tree
+    ripgrep
 
-    pkgs.yazi
+    yazi
 
-    pkgs.buku
+    buku
 
-    pkgs.texliveFull
+    texliveFull
 
-    pkgs.nixfmt-rfc-style
+    nixfmt-rfc-style
 
-    pkgs.obsidian
+    obsidian
 
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
