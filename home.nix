@@ -1,6 +1,11 @@
 # home.nix
 
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -27,6 +32,7 @@
     pass
     nnn
     lua5_1
+    go
 
     isync
     msmtp
@@ -44,6 +50,8 @@
 
     yazi
 
+    kitty
+
     buku
 
     texliveFull
@@ -51,6 +59,10 @@
     nixfmt-rfc-style
 
     obsidian
+
+    fd
+
+    ngrok
 
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
@@ -69,6 +81,18 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
   ];
+
+  home.activation.kitty = lib.hm.dag.entryAfter [ "writeBoundry" ] ''
+    $DRY_RUN_CMD [ -f ~/Applications/kitty.app ] && rm -rf ~/Applications/kitty.app
+    $DRY_RUN_CMD cp -r ${pkgs.kitty}/Applications/kitty.app/ ~/Applications
+    $DRY_RUN_CMD chmod -R 755 ~/Applications/kitty.app
+  '';
+
+  home.activation.obsidian = lib.hm.dag.entryAfter [ "writeBoundry" ] ''
+    $DRY_RUN_CMD [ -f ~/Applications/Obsidian.app ] && rm -rf ~/Applications/Obsidian.app
+    $DRY_RUN_CMD cp -r ${pkgs.obsidian}/Applications/Obsidian.app/ ~/Applications
+    $DRY_RUN_CMD chmod -R 755 ~/Applications/Obsidian.app
+  '';
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
