@@ -43,7 +43,6 @@
     casks = [
       "alfred"
       "alt-tab"
-      "emacs"
       "flux"
       "hammerspoon"
       "iina"
