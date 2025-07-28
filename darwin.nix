@@ -46,7 +46,6 @@
       "flux"
       "hammerspoon"
       "iina"
-      "kitty"
     ];
   };
 
