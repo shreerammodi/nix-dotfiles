@@ -120,7 +120,10 @@
   #
   # if you don't want to manage your shell through Home Manager.
 
-  home.sessionPath = [ "$HOME/.local/bin" ];
+  home.sessionPath = [
+    "$HOME/.local/bin"
+    "$HOME/node_modules/.bin"
+  ];
 
   home.sessionVariables = {
     EDITOR = "nvim";
