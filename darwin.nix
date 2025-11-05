@@ -41,11 +41,12 @@
     ];
 
     casks = [
-      "alfred"
       "alt-tab"
-      "flux"
+      "appcleaner"
+      "flux-app"
       "hammerspoon"
       "iina"
+      "maccy"
     ];
   };
 
