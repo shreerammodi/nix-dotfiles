@@ -150,7 +150,7 @@
     enable = true;
     enableCompletion = true;
     syntaxHighlighting.enable = true;
-    dotDir = ".config/zsh";
+    dotDir = "${config.xdg.configHome}.config/zsh";
 
     autocd = true;
 
@@ -158,24 +158,6 @@
       eval "$(/opt/homebrew/bin/brew shellenv)"
 
       FPATH="$(brew --prefix)/share/zsh/site-functions:''${FPATH}"
-    '';
-
-    initExtraFirst = ''
-      # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-      # Initialization code that may require console input (password prompts, [y/n]
-      # confirmations, etc.) must go above this block; everything else may go below.
-      if [[ -r "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh" ]]; then
-        source "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh"
-      fi
-
-      # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-      [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
-
-
-      # Ghostty shell integration for Bash. This should be at the top of your bashrc!
-      if [ -n "''${GHOSTTY_RESOURCES_DIR}" ]; then
-        builtin source "''${GHOSTTY_RESOURCES_DIR}/shell-integration/bash/ghostty.bash"
-      fi
     '';
 
     completionInit = ''
@@ -198,7 +180,22 @@
       zstyle ':fzf-tab:*' switch-group '<' '>'
     '';
 
-    initExtra = ''
+    initContent = ''
+      # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+      # Initialization code that may require console input (password prompts, [y/n]
+      # confirmations, etc.) must go above this block; everything else may go below.
+      if [[ -r "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh" ]]; then
+        source "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh"
+      fi
+
+      # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+      [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+
+      # Ghostty shell integration for Zsh
+      if [ -n "''${GHOSTTY_RESOURCES_DIR}" ]; then
+        builtin source "''${GHOSTTY_RESOURCES_DIR}/shell-integration/zsh/ghostty-integration"
+      fi
+
       autoload edit-command-line; zle -N edit-command-line
       bindkey -e
       bindkey '^e' edit-command-line
