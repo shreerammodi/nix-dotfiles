@@ -270,21 +270,32 @@
     enableBashIntegration = true;
   };
 
-  programs.git = {
-    delta = {
-      enable = true;
-      options = {
-        navigate = true;
-        line-numbers = true;
-        side-by-side = false;
-      };
-    };
+  programs.delta = {
     enable = true;
-    ignores = [ ".DS_Store" ];
-    userName = "Shreeram Modi";
-    userEmail = "smodi@smodi.net";
-    signing.key = "0x994DB28C8F367B2F";
-    extraConfig = {
+    enableGitIntegration = true;
+    options = {
+      navigate = true;
+      line-numbers = true;
+      side-by-side = false;
+    };
+  };
+
+  programs.git = {
+    enable = true;
+    ignores = [
+      ".DS_Store"
+      "CLAUDE.md"
+      ".claude/"
+    ];
+    settings = {
+      user = {
+        name = "Shreeram Modi";
+        email = "smodi@smodi.net";
+      };
+      signing.key = "0x994DB28C8F367B2F";
+      core = {
+        abbrev = 10;
+      };
       credential = {
         helper = "store";
       };
