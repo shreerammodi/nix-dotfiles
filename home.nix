@@ -150,7 +150,7 @@
     enable = true;
     enableCompletion = true;
     syntaxHighlighting.enable = true;
-    dotDir = "${config.xdg.configHome}.config/zsh";
+    dotDir = "${config.xdg.configHome}/zsh";
 
     autocd = true;
 
