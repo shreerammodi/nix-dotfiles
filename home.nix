@@ -100,6 +100,7 @@
   home.sessionPath = [
     "$HOME/.local/bin"
     "$HOME/node_modules/.bin"
+    "$HOME/.orbstack/bin"
   ];
 
   home.sessionVariables = {
