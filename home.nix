@@ -23,63 +23,40 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
+    buku
     cargo
-    nodejs
-    python3
-
-    neovim
-    stow
-    pass
-    nnn
-    lua5_1
+    eza
+    fastfetch
+    fd
+    ffmpeg
+    gdu
     go
-
+    ibm-plex
     isync
+    khard
+    kitty
+    lua5_1
+    luarocks
     msmtp
     neomutt
-    notmuch
-    urlscan
-    w3m
-
-    luarocks
-    ripgrep
-    khard
-    eza
-    tree
-    ripgrep
-
-    yazi
-
-    kitty
-
-    buku
-
-    texliveFull
-
+    neovim
     nixfmt-rfc-style
-
+    nodejs
+    notmuch
     obsidian
-
-    fd
-
-    ngrok
-
-    # # Adds the 'hello' command to your environment. It prints a friendly
-    # # "Hello, world!" when run.
-    # pkgs.hello
-
-    # # It is sometimes useful to fine-tune packages, for example, by applying
-    # # overrides. You can do that directly here, just don't forget the
-    # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
-    # # fonts?
-    # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
-
-    # # You can also create simple shell scripts directly inside your
-    # # configuration. For example, this adds a command 'my-hello' to your
-    # # environment:
-    # (pkgs.writeShellScriptBin "my-hello" ''
-    #   echo "Hello, ${config.home.username}!"
-    # '')
+    pandoc
+    pipx
+    python3
+    ripgrep
+    rustc
+    stow
+    texliveFull
+    tree
+    urlscan
+    vdirsyncer
+    w3m
+    yazi
+    yt-dlp
   ];
 
   home.activation.kitty = lib.hm.dag.entryAfter [ "writeBoundry" ] ''
