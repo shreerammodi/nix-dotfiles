@@ -109,7 +109,6 @@
     PAGER = "bat";
     MANPAGER = "nvim +Man!";
     KEYID = "0x994DB28C8F367B2F";
-    ZK_NOTEBOOK_DIR = "/Users/shreeram/Documents/notes";
     LEDGER_FILE = "/Users/shreeram/Documents/src/github.com/shreerammodi/finances/hledger.journal";
   };
 
