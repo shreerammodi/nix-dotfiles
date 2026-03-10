@@ -110,6 +110,7 @@
     MANPAGER = "nvim +Man!";
     KEYID = "0x994DB28C8F367B2F";
     ZK_NOTEBOOK_DIR = "/Users/shreeram/Documents/notes";
+    LEDGER_FILE = "/Users/shreeram/Documents/src/github.com/shreerammodi/finances/hledger.journal";
   };
 
   home.shellAliases = {
@@ -119,6 +120,14 @@
     el = "eza --long --header --git --icons --classify --all";
     et = "eza --tree --level=2 --long --header --git --icons --classify --all";
     lg = "lazygit";
+    hl = "hledger";
+    hl-roi = ''
+      hledger roi --pretty --value=end,$ --infer-market-prices \
+          --inv "assets:brokerage:individual" \
+          --inv "assets:retirement:roth" \
+          --pnl "income:capitalgains" \
+          --pnl "income:dividends"'
+    '';
   };
 
   # Let Home Manager install and manage itself.
