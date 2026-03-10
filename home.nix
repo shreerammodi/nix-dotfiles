@@ -106,7 +106,7 @@
   home.sessionVariables = {
     EDITOR = "nvim";
     VISUAL = "nvim";
-    PAGER = "less -r";
+    PAGER = "bat";
     MANPAGER = "nvim +Man!";
     KEYID = "0x994DB28C8F367B2F";
     ZK_NOTEBOOK_DIR = "/Users/shreeram/Documents/notes";
