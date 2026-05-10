@@ -23,40 +23,57 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
+
+    # Programs
+
     buku
-    cargo
-    eza
-    fastfetch
-    fd
     ffmpeg
     gdu
-    go
-    ibm-plex
+    kitty
+    neovim
+    newsbeuter
+    ripgrep
+    yazi
+
+    # Mail
+
     isync
     khard
-    kitty
-    lua5_1
-    luarocks
     msmtp
     neomutt
-    neovim
-    nixfmt-rfc-style
-    nodejs
     notmuch
-    obsidian
-    pandoc
-    pipx
-    python3
-    ripgrep
-    rustc
-    stow
-    texliveFull
-    tree
     urlscan
     vdirsyncer
     w3m
-    yazi
+
+    # CLI Utilities
+
+    eza
+    fd
+    pandoc
+    stow
+    texliveFull
+    tree
     yt-dlp
+
+    # Languages
+
+    cargo
+    go
+    lua5_1
+    luarocks
+    nixfmt-rfc-style
+    nodejs
+    pipx
+    python3
+    rustc
+
+    # Misc
+
+    fastfetch
+    ibm-plex
+    obsidian
+
   ];
 
   home.activation.kitty = lib.hm.dag.entryAfter [ "writeBoundry" ] ''
