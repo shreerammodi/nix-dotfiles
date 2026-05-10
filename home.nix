@@ -31,7 +31,7 @@
     gdu
     kitty
     neovim
-    newsbeuter
+    newsboat
     ripgrep
     yazi
 
